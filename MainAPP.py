@@ -11,7 +11,6 @@ localtime = time.localtime(time.time())
 currenttime = "{:02d}/{:02d}/{} {:02d}:{:02d}".format(localtime[2], localtime[1], localtime[0], localtime[3], localtime[4])
 
 emp = Employees()
-notes = Notes()
 login_user = Login()
 
 
@@ -23,11 +22,11 @@ LC = LoginCheck()
 LC.login = ''
 LC.password = ''
 
-class ArsenalPalace(tk.Tk):
+class MainAPP(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
 
-        tk.Tk.wm_title(self, "Arsenal Palace Grafik")
+        tk.Tk.wm_title(self, "Arsenal Palace Schedule")
         self.containers = {}
         self.frames = {}
         self.show_container(LoginPage)
@@ -367,6 +366,8 @@ class Notes(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
+        notes = Notes()
+
         self.top = tk.Toplevel()
 
         self.notes_list= {}
@@ -448,7 +449,7 @@ def on_closing():
 
 
 
-app = ArsenalPalace()
+app = MainAPP()
 app.resizable(width=False, height=False)
 #app.protocol("WM_DELETE_WINDOW", on_closing)
 app.mainloop()
