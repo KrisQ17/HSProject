@@ -71,4 +71,4 @@ class Notes():
 
 if __name__ == "__main__":
     test = Employees()
-    test.delete('Sandra Malus')
+    test.delete('test test')
